@@ -4,7 +4,7 @@ Feature: As a user
 
 Background:
   Given I am on the 'landing' page
-  And there are following restaurants exists:
+  And the following restaurants exists:
     | Name         | Address1       | PostalCode | City    | Cuisine       |
     | 'Indian Fun' | 'Snorgatan 12' | '164 55'   | 'Kista' | 'Indian Food' |
 
