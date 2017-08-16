@@ -5,8 +5,8 @@ Feature: As a user
 Background:
   Given I am on the 'landing' page
   And the following restaurants exists:
-    | Name         | Address1       | PostalCode | City    | Cuisine       |
-    | 'Indian Fun' | 'Snorgatan 12' | '164 55'   | 'Kista' | 'Indian Food' |
+    | name         | address1       | postal_code | city    | cuisine       |
+    | 'Indian Fun' | 'Snorgatan 12' | '164 55'    | 'Kista' | 'Indian Food' |
 
 Scenario:
   Then I should see 'Indian Fun'

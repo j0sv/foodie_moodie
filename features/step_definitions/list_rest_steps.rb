@@ -3,8 +3,9 @@ Given(/^I am on the 'landing' page$/) do
 end
 
 Given(/^the following restaurants exists:$/) do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  table.hashes.each do |hash|
+    FactoryGirl.create(:restaurant, hash)
+  end
 end
 
 Then(/^I should see  "([^"]*)"$/) do |arg1|

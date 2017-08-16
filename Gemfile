@@ -20,7 +20,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'pry-rails'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 group :development do
