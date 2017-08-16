@@ -4,10 +4,12 @@ Feature: As a user
 
 Background:
   Given I am on the 'landing' page
-  And there are following data
+  And there are following restaurants exists:
+    | Name         | Address1       | PostalCode | City    | Cuisine       |
+    | 'Indian Fun' | 'Snorgatan 12' | '164 55'   | 'Kista' | 'Indian Food' |
 
 Scenario:
-  Then I should see  "Snorgatan 12, 164 55 Kista"
+  Then I should see 'Indian Fun'
+  And I should see  "Snorgatan 12, 164 55 Kista"
   And I should see '1234555'
   And I should see 'Indian Food'
-  And I should see 'Indian Fun'
