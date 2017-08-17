@@ -3,7 +3,7 @@ Feature: As a user
   I need to see a list of restaurants
 
   Background:
-    Given the following restaurants exists:
+    Given the following restaurants exist:
       | name           | address1          | postal_code | phone_number | city    | cuisine        |
       | Indian Fun     | Snorgatan 12      | 164 55      | 1234555      | Kista   | Indian Food    |
       | Italian Fun    | Leyongatan 14     | 164 55      | 8462956      | Kista   | Italian Food   |
