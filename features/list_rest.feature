@@ -3,13 +3,13 @@ Feature: As a user
   I need to see a list of restaurants
 
 Background:
-  Given I am on the 'landing' page
-  And the following restaurants exists:
-    | name         | address1       | postal_code | city    | cuisine       |
-    | 'Indian Fun' | 'Snorgatan 12' | '164 55'    | 'Kista' | 'Indian Food' |
+  Given the following restaurants exists:
+    | name         | address1       | postal_code | phone_number | city    | cuisine       |
+    | Indian Fun   | Snorgatan 12   | 164 55      | 1234555      | Kista   | Indian Food   |
 
 Scenario:
-  Then I should see 'Indian Fun'
-  And I should see  "Snorgatan 12, 164 55 Kista"
-  And I should see '1234555'
-  And I should see 'Indian Food'
+  When I visit "landing" page
+  And I should see "Indian Fun"
+  And I should see "Snorgatan 12, 164 55 Kista"
+  And I should see "1234555"
+  And I should see "Indian Food"
