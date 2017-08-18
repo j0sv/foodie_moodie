@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+
+  resources :restaurants, except: [:index]
+  root controller: :restaurants, action: :index
 end

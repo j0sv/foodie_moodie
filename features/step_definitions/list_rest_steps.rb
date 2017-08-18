@@ -1,9 +1,5 @@
-When(/^I visit "landing" page$/) do
-  visit root_path
-end
 
-
-Given(/^the following restaurants exists:$/) do |table|
+Given(/^the following restaurants exist:$/) do |table|
   table.hashes.each do |hash|
     FactoryGirl.create(:restaurant, hash)
   end
