@@ -10,7 +10,6 @@ Given(/^the following dishes exist:$/) do |table|
     restaurant = Restaurant.find_by(name: hash[:restaurant])
     FactoryGirl.create(:dish, hash.except!(:restaurant).merge!({restaurant: restaurant}))
   end
-  # table is a Cucumber::MultilineArgument::DataTable
 end
 
 When(/^I visit "([^"]*)" page$/) do |page|
@@ -20,5 +19,8 @@ When(/^I visit "([^"]*)" page$/) do |page|
     when 'restaurant'
       restaurant = Restaurant.find_by(name: 'Indian Fun')
       visit restaurant_path(restaurant)
+    when 'Order'
+      #order = Order.find_by(order_id: 'papadom')
+      visit orders_path
   end
 end
