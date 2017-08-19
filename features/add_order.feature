@@ -18,7 +18,6 @@ Background:
 Scenario: Add dish to order
   When I visit "restaurant" page
   And I should be able to see "papadom" on the page
-  And I click on "Add"
   And I add "papadom" to order
   And I visit "Order" page
   Then Order items in cart should be "1"
