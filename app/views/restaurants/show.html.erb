@@ -5,5 +5,11 @@
     <%= dish.title %>
     <%= dish.description %>
     <%= dish.price %>
-    <input type="submit" id="<%= dish.id %>" value="Add"></input>
+
+    <%= form_tag(orders_path) do %>
+      <%= submit_tag("Add", id: dish.id) do %>
+
+      <% end %>
+      <%= hidden_field_tag :dish_id, dish.id %>
+    <% end %>
 <% end %>
