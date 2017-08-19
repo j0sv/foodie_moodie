@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
 
   def create
+    session[:return_to] ||= request.referer
+
     if session[:order_id]
       order = Order.find(session[:order_id])
     else
@@ -14,7 +16,7 @@ class OrdersController < ApplicationController
     else
       flash[:alert] = "Item not added, try again!"
     end
-    redirect_to order_path
+    redirect_to session.delete(:return_to)
   end
 
  def index
