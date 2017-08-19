@@ -9,6 +9,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Foodie Moodie</a>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <a href="/order">
+              <span id="order_item">Order items: <%= get_order_items_count %> </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="right">
+      <% flash.each do |key, value| %>
+        <span class="alert alert-<%= key %>"><%= value %></span>
+      <% end %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

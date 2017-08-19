@@ -18,6 +18,8 @@ When(/^show me the page$/) do
   save_and_open_page
 end
 
-Then(/^Order items in cart should be "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^Order items in cart should be "([^"]*)"$/) do |expected_count|
+  within "#order_item" do
+    page.should have_content expected_count
+  end
 end
