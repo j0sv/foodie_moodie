@@ -18,7 +18,7 @@ gem 'acts_as_shopping_cart'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'factory_girl_rails'
