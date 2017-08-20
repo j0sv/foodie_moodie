@@ -21,7 +21,7 @@ When(/^show me the page$/) do
 end
 
 Then(/^Order items in cart should be "([^"]*)"$/) do |expected_count|
-  within "#order_item" do
-    page.should have_content expected_count
+  within '#order_item' do
+    expect(page).to have_content expected_count
   end
 end
