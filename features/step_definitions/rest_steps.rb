@@ -13,3 +13,8 @@ When(/^I click on delete to remove the restaurant "([^"]*)"$/) do |restaurant_na
   restaurant_id = Restaurant.find_by(name: restaurant_name).id
   click_link_or_button "delete_" + restaurant_id.to_s
 end
+
+When(/^I add "([^"]*)" to order$/) do |dish_name|
+  add_button_with_id = Dish.find_by(name: dish_name).id
+  click_link_or_button add_button_with_id
+end
