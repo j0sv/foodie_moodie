@@ -16,6 +16,9 @@ Feature: As a user
     And I should see "<address1>, <postal_code> <city>"
     And I should see "<phone_number>"
     And I should see "<cuisine>"
+    And I click on "Indian Fun"
+    Then I should see "Restaurant:"
+
     Examples:
       | name           | address1          | postal_code | phone_number | city    | cuisine        |
       | Indian Fun     | Snorgatan 12      | 164 55      | 1234555      | Kista   | Indian Food    |

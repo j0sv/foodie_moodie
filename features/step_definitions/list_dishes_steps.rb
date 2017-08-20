@@ -24,3 +24,11 @@ When(/^I visit "([^"]*)" page$/) do |page|
       visit orders_path
   end
 end
+
+When(/^I click on "([^"]*)"$/) do |link|
+  click_link_or_button link
+end
+
+Then(/^I should be redirected to "([^"]*)" page$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
