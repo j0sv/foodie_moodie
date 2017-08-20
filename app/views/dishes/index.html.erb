@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dishes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Restaurant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.name %></td>
+        <td><%= dish.description %></td>
+        <td><%= dish.price %></td>
+        <td><%= dish.restaurant.name %></td>
+        <td>
+          <%= form_tag(orders_path) do %>
+              <%= submit_tag('Add', id: dish.id) %>
+              <%= hidden_field_tag :dish_id, dish.id %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', restaurant_dish_path(dish.restaurant, dish) %></td>
+        <td><%= link_to 'Edit', edit_restaurant_dish_path(dish.restaurant, dish) %></td>
+        <td><%= link_to 'Destroy', restaurant_dish_path(dish.restaurant, dish), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dish', new_restaurant_dish_path %>

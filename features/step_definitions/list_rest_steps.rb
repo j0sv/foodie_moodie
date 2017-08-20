@@ -1,10 +1,10 @@
-
 Given(/^the following restaurants exist:$/) do |table|
   table.hashes.each do |hash|
     FactoryGirl.create(:restaurant, hash)
   end
 end
 
-Then(/^I should see "([^"]*)"$/) do |content|
-  page.should have_content(content)
+When(/^I visit menu page for "([^"]*)"$/) do |restaurant_name|
+  restaurant = Restaurant.find_by(name: restaurant_name)
+  visit restaurant_dishes_path(restaurant)
 end

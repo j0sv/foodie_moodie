@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :dish do
-    title "MyString"
-    description "MyText"
+  factory :dish, class: 'Dish' do
+    name "MyString"
+    description "MyString"
     price 1
     restaurant nil
   end

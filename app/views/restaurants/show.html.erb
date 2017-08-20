@@ -1,8 +1,54 @@
-<%= @restaurant.name %>
+<p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
 
-<% @dishes.each do |dish| %>
-    <%= dish.title %>
-    <%= dish.description %>
-    <%= dish.price %>
-<% end %>
+<p>
+  <strong>Address1:</strong>
+  <%= @restaurant.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @restaurant.address2 %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @restaurant.postal_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @restaurant.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @restaurant.country %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @restaurant.email %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @restaurant.long %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @restaurant.lat %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
