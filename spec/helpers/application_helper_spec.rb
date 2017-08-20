@@ -1,4 +1,3 @@
-require 'spec_helper'
 
 # RSpec.describe ApplicationHelper do
 #   describe '#get_order_items_count' do

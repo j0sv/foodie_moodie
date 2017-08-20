@@ -49,3 +49,5 @@ bower.json
 
 .idea
 .idea/*
+
+spec/examples.txt

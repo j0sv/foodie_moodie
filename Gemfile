@@ -18,10 +18,10 @@ gem 'acts_as_shopping_cart'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'pry-rails'
-  gem 'factory_girl_rails', :require => false
+  gem 'factory_girl_rails'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'coveralls', require: false
   gem 'launchy'
