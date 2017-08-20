@@ -8,3 +8,8 @@ When(/^I visit menu page for "([^"]*)"$/) do |restaurant_name|
   restaurant = Restaurant.find_by(name: restaurant_name)
   visit restaurant_dishes_path(restaurant)
 end
+
+When(/^I click on delete to remove the restaurant "([^"]*)"$/) do |restaurant_name|
+  restaurant_id = Restaurant.find_by(name: restaurant_name).id
+  click_link_or_button "delete_" + restaurant_id.to_s
+end

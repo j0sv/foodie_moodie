@@ -4,7 +4,7 @@ Then(/^Order items in cart should be "([^"]*)"$/) do |expected_count|
   end
 end
 
-When(/^I add "([^"]*)" to order$/) do |dish_name|
+When(/^I adddddd "([^"]*)" to order$/) do |dish_name|
   add_button_with_id = Dish.find_by(name: dish_name).id
   click_link_or_button add_button_with_id
 end

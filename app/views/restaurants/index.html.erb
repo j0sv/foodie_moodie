@@ -17,7 +17,8 @@
         <br>
         <span><%= link_to 'Show', restaurant %></span>
         <span><%= link_to 'Edit', edit_restaurant_path(restaurant) %></span>
-        <span><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+        <% delete_link_id = "delete_#{restaurant.id}" %>
+        <span><%= link_to 'Delete', restaurant, id: delete_link_id, method: :delete, data: { confirm: 'Are you sure?' } %></span>
       </div>
     <% end %>
 

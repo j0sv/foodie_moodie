@@ -8,4 +8,7 @@ Feature: As admin user
       | Indian Fun | Snorgatan 12 | 164 55      | 1234555      | Kista |
 
   Scenario: Add restaurant
-    When I visit "register restaurant" page
+    When I visit "landing" page
+    And Show me the page
+    And I click on delete to remove the restaurant "Indian Fun"
+    Then I should see "Restaurant was successfully destroyed."
