@@ -6,7 +6,7 @@
       <div>
         <h2><%= restaurant.name %></h2>
         <div><%= restaurant.address1 %>, <%= restaurant.postal_code %> <%= restaurant.city %>, <%= restaurant.country %></div>
-        <span><%= link_to 'Show Menu', restaurant_dishes_path(restaurant.__id__) %></span>
+        <span><%= link_to 'Show Menu', restaurant_dishes_path(restaurant.id) %></span>
         <span><%= restaurant.address2 %></span>
         <br>
         <span>Tel: <%= restaurant.phone_number %></span>
