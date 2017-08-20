@@ -13,16 +13,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'acts_as_shopping_cart'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
-  gem 'pry-rails'
+  gem 'shoulda-matchers'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'pry-rails'
   gem 'coveralls', require: false
+  gem 'cucumber-rails', require: false
 end
 
 group :development do
@@ -30,6 +30,10 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

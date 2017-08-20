@@ -9,9 +9,8 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
       t.string :country
       t.string :phone_number
       t.string :email
-      t.float :longitude
-      t.float :latitude
-      t.string :cuisine
+      t.float :long
+      t.float :lat
 
       t.timestamps
     end

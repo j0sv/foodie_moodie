@@ -10,28 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817145706) do
+ActiveRecord::Schema.define(version: 20170819170849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.bigint "restaurant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_categories_on_restaurant_id"
-  end
-
   create_table "dishes", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
+    t.string "name"
+    t.string "description"
     t.integer "price"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "owner_id"
+    t.string "owner_type"
+    t.integer "quantity"
+    t.integer "item_id"
+    t.string "item_type"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -43,13 +51,11 @@ ActiveRecord::Schema.define(version: 20170817145706) do
     t.string "country"
     t.string "phone_number"
     t.string "email"
-    t.float "longitude"
-    t.float "latitude"
-    t.string "cuisine"
+    t.float "long"
+    t.float "lat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "categories", "restaurants"
   add_foreign_key "dishes", "restaurants"
 end

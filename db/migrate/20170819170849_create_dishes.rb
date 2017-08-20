@@ -1,10 +1,10 @@
 class CreateDishes < ActiveRecord::Migration[5.1]
   def change
     create_table :dishes do |t|
-      t.string :title
-      t.text :description
+      t.string :name
+      t.string :description
       t.integer :price
-      t.references :restaurants, foreign_key: true
+      t.belongs_to :restaurant, foreign_key: true
 
       t.timestamps
     end

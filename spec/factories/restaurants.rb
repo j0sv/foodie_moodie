@@ -8,8 +8,7 @@ FactoryGirl.define do
     country "MyString"
     phone_number "MyString"
     email "MyString"
-    longitude 1.5
-    latitude 1.5
-    cuisine "MyString"
+    long 1.5
+    lat 1.5
   end
 end

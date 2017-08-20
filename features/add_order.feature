@@ -1,9 +1,8 @@
-Feature: As a user
-  In order to decide what dish to choose
-  I need to see a list of dishes on the restaurant page with price
+Feature: As user
+  In order to choose multiple dishes
+  I need to be able to add them to order
 
   Background:
-
     Given the following restaurants exist:
       | name       | address1     | postal_code | phone_number | city  |
       | Indian Fun | Snorgatan 12 | 164 55      | 1234555      | Kista |
@@ -16,15 +15,9 @@ Feature: As a user
       | Vegan curry   | Vegetables boiled in curry sauce | 400   | Indian Fun |
       | Choco curry   | Chocolate boiled in curry sauce  | 500   | Indian Fun |
 
-  Scenario Outline:
-    When I visit "restaurant" page
-    And I should see "<name>"
-    And I should see "<description>"
-    And I should see "<price>"
-    Examples:
-      | name          | description                      | price |
-      | Papadom       | Deep fried crunchy things        | 100   |
-      | Indian lamb   | Lamb with indian spices          | 200   |
-      | Chicken curry | Chicken boiled in curry sauce    | 300   |
-      | Vegan curry   | Vegetables boiled in curry sauce | 400   |
-      | Choco curry   | Chocolate boiled in curry sauce  | 500   |
+  Scenario: Add dish to order
+    When I visit menu page for "Indian Fun"
+    And I should see "Papadom"
+    And I add "Papadom" to order
+    Then I should see "Papadom was successfully added to order"
+    And Order items in cart should be "1"

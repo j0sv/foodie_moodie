@@ -1,6 +1,26 @@
-<% @restaurants.each do |restaurant| %>
-  <div><h1><%= restaurant.name %></h1></div>
-    <div><%= restaurant.address1 %>, <%= restaurant.postal_code %> <%= restaurant.city %> </div>
-    <div><%= restaurant.phone_number %></div>
-    <div><%= restaurant.cuisine %></div>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<h1>Restaurants</h1>
+
+    <% @restaurants.each do |restaurant| %>
+      <div>
+        <h2><%= restaurant.name %></h2>
+        <div><%= restaurant.address1 %>, <%= restaurant.postal_code %> <%= restaurant.city %>, <%= restaurant.country %></div>
+        <span><%= link_to 'Show Menu', restaurant_dishes_path(restaurant.__id__) %></span>
+        <span><%= restaurant.address2 %></span>
+        <br>
+        <span>Tel: <%= restaurant.phone_number %></span>
+        <br>
+        <span>Mail: <%= restaurant.email %></span>
+        <br>
+        <span>Location: <%= restaurant.long %>, <%= restaurant.lat %></span>
+        <br>
+        <span><%= link_to 'Show', restaurant %></span>
+        <span><%= link_to 'Edit', edit_restaurant_path(restaurant) %></span>
+        <span><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </div>
+    <% end %>
+
+<br>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

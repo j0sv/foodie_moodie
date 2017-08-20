@@ -4,11 +4,34 @@
     <title>FoodieMoodie</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Foodie Moodie</a>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <a href="<%= orders_path %>">
+              <span id="order_item">Order items: <%= get_order_items_count %> </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="right">
+      <% flash.each do |key, value| %>
+          <span class="alert alert-<%= key %>"><%= value %></span>
+      <% end %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
