@@ -21,7 +21,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'pry-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'coveralls', require: false
   gem 'launchy'

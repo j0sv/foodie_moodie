@@ -1,3 +1,5 @@
+require 'factory_girl_rails'
+
  Given(/^the following dishes exist$/) do |table|
    table.hashes.each do |hash|
      restaurant = Restaurant.find_by(name: hash[:restaurant])
