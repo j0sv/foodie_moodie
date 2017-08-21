@@ -19,8 +19,4 @@ class OrdersController < ApplicationController
     redirect_to session.delete(:return_to)
   end
 
- def index
-    #@order_items = Order.find_by(id: session[:order_id]).all
-    #@order = Order.last
-  end
 end
