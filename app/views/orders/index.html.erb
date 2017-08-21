@@ -1,6 +1,7 @@
 <h1>Order items:</h1>
 
 <% @order.shopping_cart_items.each do |order_item| %>
+
     <div id="<%= "order_row_#{order_item.item.id}" %>">
       <div><%= order_item.item.name %></div>
       <div><%= order_item.price %></div>
@@ -8,6 +9,28 @@
 
     </div>
 <% end %>
+
+
+<% @order.shopping_cart_items.each do |order_item| %>
+    <table>
+      <tr id="<%= "order_row_#{order_item.item.id}" %>">
+        <td><%= order_item.item.name %></td>
+        <td><%= order_item.quantity %></td>
+        <td><%= order_item.price %></td>
+        <td><%= order_item.quantity * order_item.price %></td>
+      </tr>
+    </table>
+
+
+    <div >
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+<% end %>
+
+
 
 <div>Total price: <%= @order.total%></div>
 
