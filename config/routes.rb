@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root controller: :restaurants, action: :index
   resources :orders, only: [:create, :index]
+
   resources :restaurants, except: [:index]do
       resources :dishes
   end

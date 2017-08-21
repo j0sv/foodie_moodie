@@ -1,6 +1,6 @@
 module ApplicationHelper
   def get_order
-    if session[:order_id]
+    if Order.exists?(session[:order_id])
       order = Order.find(session[:order_id])
     else
       order = Order.create

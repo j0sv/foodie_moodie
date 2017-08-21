@@ -1,6 +1,6 @@
 Then(/^Order items in cart should be "([^"]*)"$/) do |expected_count|
   within "#order_item" do
-    page.should have_content expected_count
+    expect(page).to have_content expected_count
   end
 end
 

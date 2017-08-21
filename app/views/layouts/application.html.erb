@@ -4,10 +4,10 @@
     <title>FoodieMoodie</title>
     <%= csrf_meta_tags %>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
@@ -15,7 +15,7 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Foodie Moodie</a>
+        <%= link_to "Foodie Moodie", root_path, class: "brand-logo" %>
         <ul id="nav-mobile" class="right">
           <li>
             <a href="<%= orders_path %>">

@@ -1,5 +1,5 @@
 Then(/^I should see "([^"]*)"$/) do |content|
-  page.should have_content(content)
+  expect(page).to have_content(content)
 end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
