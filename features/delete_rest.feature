@@ -9,6 +9,5 @@ Feature: As admin user
 
   Scenario: Add restaurant
     When I visit "landing" page
-    And Show me the page
     And I click on delete to remove the restaurant "Indian Fun"
     Then I should see "Restaurant was successfully destroyed."
