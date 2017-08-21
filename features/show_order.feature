@@ -20,4 +20,6 @@ Scenario: Add dish to order
   When I visit "restaurant" page
   And I should be able to see "papadom" on the page
   And I add "papadom" to order
-  And I click on "Order items: 1" 
+  And I click on "Show Order"
+  Then I should be on the "order" page
+  And I should see "papadom"

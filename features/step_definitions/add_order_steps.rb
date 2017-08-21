@@ -25,3 +25,8 @@ Then(/^Order items in cart should be "([^"]*)"$/) do |expected_count|
     expect(page).to have_content expected_count
   end
 end
+
+Then(/^I should be on the "([^"]*)" page$/) do |arg1|
+  order = Order.last
+  expect(page).to have_current_path order_path(order)
+end
