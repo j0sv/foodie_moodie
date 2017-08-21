@@ -1,6 +1,6 @@
 Feature: As user
   In order to choose multiple dishes
-  I need to be able to add them to order
+  I need to be able to add them to my order
 
 Background:
   Given the following restaurants exist:

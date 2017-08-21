@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     redirect_to session.delete(:return_to)
   end
 
-  def index
+  def show
     @order = Order.find_by(id: session[:order_id])
     @order_items = @order.shopping_cart_items
   end
