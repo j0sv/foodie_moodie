@@ -7,9 +7,8 @@ Restaurant: <%= @restaurant.name %>
     <%= dish.price %>
 
     <%= form_tag(orders_path) do %>
-      <%= submit_tag("Add", id: dish.id) do %>
-
-      <% end %>
       <%= hidden_field_tag :dish_id, dish.id %>
+      <%= submit_tag("Add", id: dish.id) %>
+
     <% end %>
 <% end %>
