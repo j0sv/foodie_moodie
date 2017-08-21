@@ -6,5 +6,5 @@ Given(/^the following restaurants exist:$/) do |table|
 end
 
 Then(/^I should see "([^"]*)"$/) do |content|
-  page.should have_content(content)
+  expect(page).to have_content content
 end

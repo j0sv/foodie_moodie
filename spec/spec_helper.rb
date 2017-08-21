@@ -1,4 +1,3 @@
-require 'factory_girl_rails'
 require 'coveralls'
 Coveralls.wear_merged!('rails')
 
