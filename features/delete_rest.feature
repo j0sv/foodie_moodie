@@ -1,6 +1,6 @@
 Feature: As admin user
-  In order to choose multiple dishes
-  I need to be able to add a restaurant
+  In to remove a closed restaurant
+  I need to be able to delete it
 
   Background:
     Given the following restaurants exist:
