@@ -14,10 +14,10 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <%= link_to "Foodie Moodie", root_path, class: "brand-logo" %>        
+        <%= link_to "Foodie Moodie", root_path, class: "brand-logo" %>
         <ul id="nav-mobile" class="right">
           <li>
-            <a href="/order">
+            <%= link_to "Show Order", order_path(@order) %>
               <span id="order_item">Order items: <%= get_order_items_count %> </span>
             </a>
           </li>

@@ -1,7 +1,7 @@
 
 Feature: As user
-  In order to choose multiple dishes
-  I need to be able to add them to my order
+  In order to see my the items in my order
+  I need be able display my order page
 
 Background:
   Given the following restaurants exist:
@@ -20,5 +20,4 @@ Scenario: Add dish to order
   When I visit "restaurant" page
   And I should be able to see "papadom" on the page
   And I add "papadom" to order
-  Then Order items in cart should be "1"
-  And I should see "papadom was successfully added to order"
+  And I click on "Order items: 1" 
