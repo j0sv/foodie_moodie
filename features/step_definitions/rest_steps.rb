@@ -18,3 +18,15 @@ When(/^I add "([^"]*)" to order$/) do |dish_name|
   add_button_with_id = Dish.find_by(name: dish_name).id
   click_link_or_button add_button_with_id
 end
+
+When(/^I visit "([^"]*)" page for "([^"]*)"$/) do |command, restaurant_name|
+  restaurant = Restaurant.find_by(name: restaurant_name)
+
+  case command
+  when 'Edit'
+    visit edit_restaurant_path(restaurant)
+  else
+    raise 'Command missing!'
+  end
+
+end
