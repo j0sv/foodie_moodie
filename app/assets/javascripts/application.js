@@ -9,6 +9,5 @@ GMaps.geolocate({
     alert("Your browser does not support geolocation");
   },
   always: function() {
-    alert("Done!");
   }
 });
