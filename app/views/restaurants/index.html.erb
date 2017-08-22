@@ -1,14 +1,36 @@
+<%= form_tag restaurants_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
 
-<div class="map" style="height: 500px; width: 500px;">
+<div id="map" style="height: 200px; width: 800px;"></div>
 
-</div>
+<div><%= params[:search] %> </div>
+
 <% @restaurants.each do |restaurant| %>
   <div>
     <h1>
       <%= link_to restaurant.name, restaurant_path(restaurant)%>
     </h1>
   </div>
-    <div><%= restaurant.address1 %>, <%= restaurant.postal_code %> <%= restaurant.city %> </div>
+    <div><%= restaurant.address %></div>
     <div><%= restaurant.phone_number %></div>
     <div><%= restaurant.cuisine %></div>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=15&markers=#{restaurant.latitude}%2C#{restaurant.longitude}" %>
 <% end %>
+
+<script type="text/javascript">
+    var map;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log( "ready!" );
+        map = new GMaps({
+            div: '#map',
+            lat: -12.043333,
+            lng: -77.028333,
+        });
+    });
+
+</script>
