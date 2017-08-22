@@ -1,5 +1,5 @@
 Then(/^I should see map$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content
 end
 
 Then(/^A pointer for my location$/) do
