@@ -5,7 +5,7 @@
   </p>
 <% end %>
 
-<div id="map" style="height: 400px; width: 800px;"></div>
+<div id="map" class="map" style="height: 400px; width: 800px;"></div>
 
 <div><%= params[:search] %> </div>
 
@@ -22,15 +22,6 @@
 <% end %>
 
 <script type="text/javascript">
-    var map;
 
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log( "ready!" );
-        map = new GMaps({
-            div: '#map',
-            lat: 59.330668,
-            lng: 18.057932,
-        });
-    });
 
 </script>

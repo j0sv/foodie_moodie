@@ -9,8 +9,10 @@ Background:
     | Italian Fun  | Leyongatan 14   | 164 55      | 8462956      | Kista | Italian Food  |
     | Chinese Fun  | Potatisgatan 20 | 164 55      | 0484658      | Kista | Chinese Food  |
     | American Fun | Snigelgatan 69  | 164 55      | 0735465      | Kista | American Food |
+  And I visit "landing" page
 
-Scenario:
-  Given I visit "landing" page
-  Then I should see map
-  And A pointer for my location
+  @javascript
+  Scenario:
+    When show me the page
+    Then I should see map
+    And A pointer for my location
