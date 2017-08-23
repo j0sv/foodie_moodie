@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(my_latitude);
         },
         always: function() {
-            console.log("KÖR DETTQA");
+            console.log("KÖR DETTA");
             map.addMarker({
                 lat: my_latitude,
                 lng: my_longitude,

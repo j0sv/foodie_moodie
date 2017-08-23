@@ -13,6 +13,7 @@ Background:
 
   @javascript
   Scenario:
-    When show me the page
     Then I should see map
-    And A pointer for my location
+    And the map has been loaded
+    And my location is set to "59.33066" lat and "18.057932" lng
+
