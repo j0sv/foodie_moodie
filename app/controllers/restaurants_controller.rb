@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
     if params[:search].present?
       @restaurants = Restaurant.near(params[:id])
     else
-      @restaurants = Restaurant.all
+      @restaurants = Restaurant.near(helpers.remote_ip)
     end
 
   end

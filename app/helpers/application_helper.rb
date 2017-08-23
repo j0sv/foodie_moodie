@@ -6,4 +6,14 @@ module ApplicationHelper
       0
     end
   end
+
+  def remote_ip
+    if request.remote_ip == '127.0.0.1'
+      # Hard coded remote address
+      '195.67.156.197'
+    else
+      request.remote_ip
+    end
+  end
+
 end
