@@ -17,9 +17,8 @@ def create
     description:  'Order ' + @order.id.to_s,
     currency:     'sek'
   )
-  @amountpaid = @order.total
-  @order = Order.create
-  session[:order_id] = @order.id
+
+  session[:order_id] = nil
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
