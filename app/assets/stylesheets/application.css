@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+
+.note {
+    font-weight:normal;
+    color:#3B3B3B;
+    letter-spacing:1pt;
+    word-spacing:2pt;
+    font-size:6px;
+}
