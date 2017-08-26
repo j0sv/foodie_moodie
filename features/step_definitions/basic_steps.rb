@@ -20,5 +20,5 @@ Then(/^Show me a image of the page$/) do
 end
 
 When(/^show me the page$/) do
-  sleep(1)
+  save_and_open_page
 end
