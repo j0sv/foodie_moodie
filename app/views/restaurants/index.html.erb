@@ -34,15 +34,17 @@
           <br><%= link_to 'Go to restaurant: ' + restaurant.name, restaurant_path(restaurant)%>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <span class="card-title grey-text text-darken-4"><%= restaurant.name %><i class="material-icons right">close</i></span>
           <div><%= restaurant.address %></div>
           <div><%= restaurant.phone_number %></div>
+          <div><%= mail_to restaurant.email %></div>
         </div>
       </div>
     </div>
 
 <% end %>
 
+</div>
 
 
 <script type="text/javascript">
