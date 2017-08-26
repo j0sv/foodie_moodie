@@ -11,9 +11,9 @@
 
 <div class="row">
   <div style="display: inline-block; width: 100%">
-    <%= form_tag restaurants_path, :method => :get do %>
+    <%= form_tag restaurants_path, method: :get do %>
       <%= text_field_tag :search, params[:search], placeholder: "Your location" %>
-      <%= submit_tag "Search Near", :name => nil, class: "waves-effect waves-light btn-large" %>
+      <%= submit_tag "Search Near", name: nil, class: "waves-effect waves-light btn-large" %>
     <% end %>
   </div>
 </div>
