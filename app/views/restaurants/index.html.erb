@@ -8,11 +8,12 @@
 <h4>Is this the place you want your food delivered to?</h4>
 <h6>If not, enter the correct location below to get the restaurants that will deliver to your place. </h6>
 <br>
+
 <div class="row">
   <div style="display: inline-block; width: 100%">
     <%= form_tag restaurants_path, :method => :get do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Your location" %>
-          <%= submit_tag "Search Near", :name => nil, class: "waves-effect waves-light btn-large" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Your location" %>
+      <%= submit_tag "Search Near", :name => nil, class: "waves-effect waves-light btn-large" %>
     <% end %>
   </div>
 </div>
