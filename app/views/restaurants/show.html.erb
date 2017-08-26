@@ -24,10 +24,7 @@
             <p><%= dish.description %></p>
             <div><%= dish.price %> sek</div>
             <br>
-            <%= form_tag(orders_path) do %>
-                <%= hidden_field_tag :dish_id, dish.id %>
-                <%= submit_tag("Add to order", id: dish.id) %>
-            <% end %>
+
           </div>
         </div>
       </div>

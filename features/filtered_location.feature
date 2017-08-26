@@ -22,7 +22,6 @@ Feature: As a user
     When I visit "landing" page
     And I fill "search" with "Gruvgatan 1, Västra Frölunda"
     And I click on "Search Near"
-    And Show me a image of the page
     Then I should not see "Vapiano"
     And I should not see "Rice"
     And I should see "Green & Rum"
