@@ -1,5 +1,5 @@
 <h2>Items in order:</h2>
-<table>
+<table class="highlight">
   <tr>
     <th>Dish title: </th>
     <th>Price: </th>
@@ -15,7 +15,7 @@
         <td>
           <%= form_tag(order_path, method: "delete") do %>
               <%= hidden_field_tag :dish_id, order_item.item.id %>
-              <%= submit_tag("Delete", id: 'del_' + order_item.item.id.to_s) %>
+              <%= submit_tag("Delete", id: 'del_' + order_item.item.id.to_s, class: "waves-effect waves-light btn btn-small red") %>
           <% end %>
         </td>
       </tr>
