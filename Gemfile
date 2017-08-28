@@ -17,6 +17,7 @@ gem 'acts_as_shopping_cart'
 gem 'geocoder'
 gem 'stripe-rails'
 gem 'dotenv-rails'
+gem "responders"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
