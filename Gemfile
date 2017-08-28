@@ -19,6 +19,7 @@ gem 'stripe-rails'
 gem 'dotenv-rails'
 gem 'responders'
 gem 'materialize-sass'
+gem 'material_icons'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
