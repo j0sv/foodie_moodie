@@ -31,3 +31,7 @@ Given(/^the following categories exist:$/) do |table|
     FactoryGirl.create(:dish_category, hash)
   end
 end
+
+When(/^the dish should have "([^"]*)" as image$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
