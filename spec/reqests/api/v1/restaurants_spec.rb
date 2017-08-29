@@ -37,5 +37,13 @@ RSpec.describe Api::V1::RestaurantsController, type: :request do
       expected_response = eval(file_fixture('restaurants_show.rb').read)
       expect(response_json).to eq JSON.parse(expected_response.to_json)
     end
+
+
+    it 'should return error message on RecordNotFound error' do
+      get '/api/v1/restaurants/555'
+
+      expected_response = {error: 'Couldn\'t find Restaurant with \'id\'=555'}
+      expect(response_json).to eq JSON.parse(expected_response.to_json)
+    end
   end
 end

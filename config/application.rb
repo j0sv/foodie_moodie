@@ -30,5 +30,13 @@ module FoodieMoodie
     config.stripe.publishable_key = ENV["PUBLISHABLE_KEY"]
     config.stripe.endpoint = "/payment/stripe-integration"
 
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any,
+                 methods: [:get],
+                 max_age: 0
+      end
+    end
   end
 end
