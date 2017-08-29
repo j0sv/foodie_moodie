@@ -38,12 +38,22 @@ RSpec.describe Api::V1::RestaurantsController, type: :request do
       expect(response_json).to eq JSON.parse(expected_response.to_json)
     end
 
+    context 'RecordNotFound' do
+      before do
+        get '/api/v1/restaurants/555'
+      end
 
-    it 'should return error message on RecordNotFound error' do
-      get '/api/v1/restaurants/555'
+      it 'should respond with http code 422' do
+        expect(response.status).to eq 422
+      end
 
-      expected_response = {error: 'Couldn\'t find Restaurant with \'id\'=555'}
-      expect(response_json).to eq JSON.parse(expected_response.to_json)
+      it 'should return error message' do
+        expected_response = {error: 'Couldn\'t find Restaurant with \'id\'=555'}
+        expect(response_json).to eq JSON.parse(expected_response.to_json)
+      end
+
     end
+
+
   end
 end

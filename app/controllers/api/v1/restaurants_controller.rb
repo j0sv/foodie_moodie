@@ -8,6 +8,6 @@ class Api::V1::RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
   rescue => e
-    render json: {error: e}
+    render json: {error: e}, status: 422
   end
 end
