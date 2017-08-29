@@ -3,25 +3,41 @@ require 'rails_helper'
 RSpec.describe Api::V1::RestaurantsController, type: :request do
 
   describe 'GET /v1/restaurants' do
-    let!(:restaurant_1) { create(:restaurant, name: 'First Joint') }
-    let!(:restaurant_2) { create(:restaurant, name: 'Second Joint') }
+    let!(:restaurant_1) { create(:restaurant,
+                                 name: 'First Joint') }
+    let!(:restaurant_2) { create(:restaurant,
+                                 name: 'Second Joint',
+                                 address1: 'Kungsgatan 1',
+                                 city: 'Stockholm') }
+    context 'regular request' do
+      before do
+        get '/api/v1/restaurants'
+      end
 
-    before do
-      get '/api/v1/restaurants'
+      it 'should respond with http code 200' do
+        expect(response.status).to eq 200
+      end
+
+      it 'should return json with restaurants collection' do
+        expected_response = eval(file_fixture('restaurants_index.rb').read)
+        expect(response_json).to eq JSON.parse(expected_response.to_json)
+      end
+
+      it 'restaurants key should return correct number of objects' do
+        expect(response_json['restaurants'].size).to eq 2
+      end
     end
 
-    it 'should respond with http code 200' do
-      expect(response.status).to eq 200
+    context 'request with geo params' do
+      before do
+        get '/api/v1/restaurants', params: {coords: {lat: 57.6, lng: 12}, distance: 20}
+      end
+
+      it 'restaurants key should return correct number of objects' do
+        expect(response_json['restaurants'].size).to eq 1
+      end
     end
 
-    it 'should return json with restaurants collection' do
-      expected_response = eval(file_fixture('restaurants_index.rb').read)
-      expect(response_json).to eq JSON.parse(expected_response.to_json)
-    end
-
-    it 'restaurants key should return correct number of objects' do
-      expect(response_json['restaurants'].size).to eq(2)
-    end
   end
 
   describe 'GET /v1/restaurants/1' do

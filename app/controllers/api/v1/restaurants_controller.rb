@@ -1,8 +1,12 @@
 class Api::V1::RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
-  rescue => e
-    render json: {error: e}
+    if params[:coords]
+      lat, lng = params[:coords][:lat], params[:coords][:lng]
+      distance = params[:distance]
+      @restaurants = Restaurant.near([lat, lng], distance.to_i)
+    else
+      @restaurants = Restaurant.all
+    end
   end
 
   def show
