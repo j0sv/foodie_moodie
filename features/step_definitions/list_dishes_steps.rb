@@ -11,7 +11,8 @@ Given(/^the following dishes exist:$/) do |table|
     dish_hash = hash.except('restaurant', 'dish_category', 'image')
     .merge({restaurant: restaurant, dish_category: dish_category})
     dish = FactoryGirl.create(:dish, dish_hash)
-    dish.image = ''
+    dish.image = File.new("#{Rails.root}/spec/fixtures/bild.jpeg")
+    dish.save
   end
 end
 
