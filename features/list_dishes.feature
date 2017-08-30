@@ -15,7 +15,7 @@ Feature: As a user
       | Dessert | Winter is here                  |
 
     And the following dishes exist:
-      | title         | description                      | price | restaurant | dish_category  | picture  |
+      | title         | description                      | price | restaurant | dish_category  | image  |
       | papadom       | deep fried crunchy things        | 100   | Indian Fun | Starter        | pic1.png |
       | indian lamb   | lamb with indian spices          | 200   | Indian Fun | Main           | pic2.png |
       | chicken curry | chicken boiled in curry sauce    | 300   | Indian Fun | Main           | pic3.png |
@@ -29,10 +29,10 @@ Feature: As a user
     And I should see "<description>"
     And I should see "<price>"
     And I should see "<dish_category>"
-    And the dish should have "<picture>" as image
+    And the dish should have "<image>" as image
 
     Examples:
-      | title         | description                      | price | dish_category | picture  |
+      | title         | description                      | price | dish_category | image  |
       | papadom       | deep fried crunchy things        | 100   | Starter       | pic1.png |
       | indian lamb   | lamb with indian spices          | 200   | Main          | pic2.png |
       | chicken curry | chicken boiled in curry sauce    | 300   | Main          | pic3.png |

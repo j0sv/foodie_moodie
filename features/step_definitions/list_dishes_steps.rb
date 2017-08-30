@@ -8,9 +8,10 @@ Given(/^the following dishes exist:$/) do |table|
   table.hashes.each do |hash|
     restaurant = Restaurant.find_by(name: hash[:restaurant])
     dish_category = DishCategory.find_by(name: hash[:dish_category])
-    dish_hash = hash.except("restaurant", "dish_category")
+    dish_hash = hash.except('restaurant', 'dish_category', 'image')
     .merge({restaurant: restaurant, dish_category: dish_category})
-    FactoryGirl.create(:dish, dish_hash)
+    dish = FactoryGirl.create(:dish, dish_hash)
+    dish.image = ''
   end
 end
 

@@ -20,6 +20,7 @@ gem 'dotenv-rails'
 gem 'responders'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'paperclip', '~> 5.0.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
