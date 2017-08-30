@@ -22,6 +22,8 @@ gem 'materialize-sass'
 gem 'material_icons'
 gem 'paperclip', '~> 5.0.0'
 
+gem 'rack-cors', require: 'rack/cors'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
