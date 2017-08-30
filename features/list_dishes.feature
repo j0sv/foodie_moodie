@@ -29,7 +29,7 @@ Feature: As a user
     And I should see "<description>"
     And I should see "<price>"
     And I should see "<dish_category>"
-    And the dish should have "<image>" as image
+    And the dish "<title>" should have "<image>" as image
 
     Examples:
       | title         | description                      | price | dish_category | image     |

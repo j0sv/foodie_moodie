@@ -34,6 +34,9 @@ Given(/^the following categories exist:$/) do |table|
   end
 end
 
-When(/^the dish should have "([^"]*)" as image$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+And(/^the dish "([^"]*)" should have "([^"]*)" as image$/) do |dish_name, image_file|
+  dish = Dish.find_by(title: dish_name)
+  within("#dish-#{dish.id}") do
+    expect(page).to have_css("img[src*='#{image_file}']")
+  end
 end
