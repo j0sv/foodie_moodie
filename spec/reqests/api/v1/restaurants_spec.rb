@@ -30,7 +30,7 @@ RSpec.describe Api::V1::RestaurantsController, type: :request do
 
     context 'request with geo params' do
       before do
-        get '/api/v1/restaurants', params: {coords: {lat: 57.6, lng: 12}, distance: 20}
+        get '/api/v1/restaurants', params: {lat: 57.6, lng: 12, distance: 20}
       end
 
       it 'restaurants key should return correct number of objects' do

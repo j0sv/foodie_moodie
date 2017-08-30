@@ -1,9 +1,9 @@
-class Api::V1::RestaurantsController < ApplicationController
+class Api::V1::RestaurantsController < ActionController::API
   def index
-    if params[:coords]
-      lat, lng = params[:coords][:lat], params[:coords][:lng]
-      distance = params[:distance]
-      @restaurants = Restaurant.near([lat, lng], distance.to_i)
+    if params[:lat] && params[:lng]
+      lat, lng = params[:lat].to_f, params[:lng].to_f
+      distance = params[:distance].to_i
+      @restaurants = Restaurant.near([lat, lng], distance)
     else
       @restaurants = Restaurant.all
     end
