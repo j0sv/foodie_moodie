@@ -16,11 +16,20 @@
   <% end %>
 </div>
 
-<div class="row center-align">
+Filter:
+<div class="button-group filter-button-group">
+  <button class="waves-effect waves-light btn btn-small" data-filter="*">show all</button>
+  <% @cuisine.each do |cuisine| %>
+    <button class="waves-effect waves-light btn btn-small" data-filter=".<%= cuisine.parameterize %>"><%= cuisine %></button>
+  <% end %>
+</div>
+<hr>
+
+<div class="grid row center-align">
 
   <% @restaurants.each do |restaurant| %>
 
-    <div class="card fix-card <%= restaurant.cuisine.parameterize %>">
+    <div class="grid-item card fix-card <%= restaurant.cuisine.parameterize %>">
       <div class="card-image waves-effect waves-block waves-light">
         <%= image_tag "http://lorempixel.com/400/200/food/" + restaurant.id.to_s + "/"%>
       </div>
@@ -47,6 +56,12 @@
   var map;
 
   document.addEventListener('DOMContentLoaded', function () {
+
+      $('.grid').isotope({
+          // options
+          itemSelector: '.grid-item',
+          layoutMode: 'fitRows'
+      });
 
         map = new GMaps({
           div: '#map',
@@ -88,6 +103,16 @@
         });
       <% end %>
 
+  });
+
+  // init Isotope
+  var $grid = $('.grid').isotope({
+      // options
+  });
+  // filter items on button click
+  $('.filter-button-group').on( 'click', 'button', function() {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
   });
   
 </script>
