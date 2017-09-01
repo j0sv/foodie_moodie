@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
 
   def index
 
-    @cuisine = Restaurant.distinct.pluck(:cuisine).each
+    @cuisines = Restaurant.distinct.pluck(:cuisine).each
 
     if params[:search].present?
       @restaurants = Restaurant.near(params[:search])

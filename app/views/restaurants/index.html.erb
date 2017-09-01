@@ -16,20 +16,21 @@
   <% end %>
 </div>
 
-Filter:
-<div class="button-group filter-button-group">
+
+<div class="button-group filter-button-group left-align" style="margin-bottom: 10px; width: 100%;">
+  <span class="left-align">Filter:</span>
   <button class="waves-effect waves-light btn btn-small" data-filter="*">show all</button>
-  <% @cuisine.each do |cuisine| %>
-    <button class="waves-effect waves-light btn btn-small" data-filter=".<%= cuisine.parameterize %>"><%= cuisine %></button>
+  <% @cuisines.each do |cuisine| %>
+      <button class="waves-effect waves-light btn btn-small" data-filter=".<%= cuisine.parameterize %>"><%= cuisine %></button>
   <% end %>
 </div>
-<hr>
 
-<div class="grid row center-align">
+<div class="grid row center-align card" style="background-color: #b5d7d4">
+
 
   <% @restaurants.each do |restaurant| %>
 
-    <div class="grid-item card fix-card <%= restaurant.cuisine.parameterize %>">
+    <div class="grid-item card fix-card left-align <%= restaurant.cuisine.parameterize %>">
       <div class="card-image waves-effect waves-block waves-light">
         <%= image_tag "http://lorempixel.com/400/200/food/" + restaurant.id.to_s + "/"%>
       </div>
